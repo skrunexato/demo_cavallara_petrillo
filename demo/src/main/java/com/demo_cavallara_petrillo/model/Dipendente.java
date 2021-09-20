@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 
 @Entity
@@ -23,6 +22,9 @@ public class Dipendente {
 	
 	@Column(name = "Cognome")
 	private String cognome;
+	
+	@Column(name = "Email")
+	private String email;
 	
 	public long getId() {
 		return id;
@@ -55,10 +57,6 @@ public class Dipendente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	@Column(name = "Email")
-	private String email;
-
 
 }
 
