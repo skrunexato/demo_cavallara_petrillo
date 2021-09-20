@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Component
 @ComponentScan("com.demo_cavallara_petrillo")
 @EnableJpaRepositories(basePackages = { "com.demo_cavallara_petrillo.dao"})
-@EntityScan({"com.demo_cavallara_petrillo.model.Persona"})
+@EntityScan({"com.demo_cavallara_petrillo.model"})
 @EnableTransactionManagement
 @SpringBootApplication
 public class DemoApplication {

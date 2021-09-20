@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.demo_cavallara_petrillo.model.Persona;
 
 @Repository
-@NoRepositoryBean 
 public interface PersonaRepository extends JpaRepository<Persona, Long>{
 
 }
