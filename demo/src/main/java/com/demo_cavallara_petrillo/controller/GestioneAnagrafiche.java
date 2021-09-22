@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo_cavallara_petrillo.dto.AziendaDto;
 import com.demo_cavallara_petrillo.dto.DipendenteDto;
 import com.demo_cavallara_petrillo.model.Azienda;
 import com.demo_cavallara_petrillo.model.Dipendente;
@@ -49,10 +50,18 @@ public class GestioneAnagrafiche {
 		service.deleteDipendente(dtoDip);
 	}
 	
-/*	@GetMapping("/dip-azienda")
-	public List<Dipendente> getDipendenteByAzienda(@RequestBody Azienda azienda){
-	List<Dipendente> lista = service.findDipendenteByAzienda(azienda);
+	@GetMapping("/dip-azienda")
+	public List<Dipendente> getDipendenteByAzienda(@RequestBody AziendaDto azienda){
+		List<Dipendente> lista = service.findDipendenteByAzienda(azienda);
 		return lista;
 	}
-	*/
+	
+	@GetMapping("/nomeAzienda")
+	public String getNomeAziendaByDipendente(@RequestBody DipendenteDto dip){
+		String nome = service.findNomeAziendaByDipendente(dip);
+		return nome;
+	}
+	
+	
+	
 }
