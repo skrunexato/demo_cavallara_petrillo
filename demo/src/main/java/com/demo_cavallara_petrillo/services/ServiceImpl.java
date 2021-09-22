@@ -59,11 +59,11 @@ public class ServiceImpl implements AppService {
 		return lista;
 	}
 
-	public String findNomeAziendaByDipendente(DipendenteDto dip) {
+/*	public String findNomeAziendaByDipendente(DipendenteDto dip) {
 		Dipendente dipendente = mapper.map(dip, Dipendente.class);
 		String nome = dipendenteRep.trovaNomeAziendaByDipendente(dipendente);
 		return nome;
-	}
+	}*/
 	
 	@Override
     public AziendaDto insertAzienda(AziendaDto dto) {

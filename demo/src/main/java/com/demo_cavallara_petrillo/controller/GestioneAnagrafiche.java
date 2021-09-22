@@ -56,11 +56,11 @@ public class GestioneAnagrafiche {
 		return lista;
 	}
 	
-	@GetMapping("/nomeAzienda")
+/*	@GetMapping("/nomeAzienda")
 	public String getNomeAziendaByDipendente(@RequestBody DipendenteDto dip){
 		String nome = service.findNomeAziendaByDipendente(dip);
 		return nome;
-	}
+	}*/
 	
 	
 	

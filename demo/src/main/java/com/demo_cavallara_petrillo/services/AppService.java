@@ -23,7 +23,7 @@ public interface AppService {
 	
 	public List<Dipendente> findDipendenteByAzienda(AziendaDto azienda);
 	
-	public String findNomeAziendaByDipendente(DipendenteDto dip);
+/*	public String findNomeAziendaByDipendente(DipendenteDto dip);*/
 	
 	public AziendaDto insertAzienda(AziendaDto dto);
 	   
