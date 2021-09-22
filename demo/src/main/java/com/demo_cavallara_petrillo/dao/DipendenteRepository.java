@@ -21,8 +21,9 @@ public interface DipendenteRepository extends JpaRepository<Dipendente, Long>{
 
 	public List<Dipendente> findByAzienda_id(long id);
 	
-	/*@Query("SELECT new com.demo_cavallara_petrillo.model.Azienda(a.nome) a From Azienda a "
-			+ "left join new com.demo_cavallara_petrillo.model.Dipendente dipendente "
-			+ "on  dipendente.Azienda = Azienda.id where Azienda.id = dip.id")
-	public String trovaNomeAziendaByDipendente(Dipendente dip);*/
+	@Query("select a.nome From Azienda a "
+			+ "LEFT JOIN Dipendente d on a.id = d.azienda.id "
+			+ " where d.id = :IdDipendente")
+	public String trovaNomeAziendaByDipendente(long IdDipendente);
 }
+/*select azienda0_.nome as col_0_0_ from azienda azienda0_ left outer join dipendente dipendente1_ on where dipendente1_.id_dipendente=?*/
