@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -14,8 +17,12 @@ public class Dipendente {
 	
 	@Id
 	@Column(name="IdDipendente")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	@ManyToOne
+	@JoinColumn(name="IdAzienda")
+	private Azienda azienda;
 	
 	@Column (name="Nome")
 	private String nome;
@@ -56,6 +63,14 @@ public class Dipendente {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Azienda getAzienda() {
+		return azienda;
+	}
+
+	public void setAzienda(Azienda azienda) {
+		this.azienda = azienda;
 	}
 
 }
