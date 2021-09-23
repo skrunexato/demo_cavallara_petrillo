@@ -17,7 +17,7 @@ import com.demo_cavallara_petrillo.model.Dipendente;
 
 
 @Repository
-public interface DipendenteRepository extends JpaRepository<Dipendente, Long>{
+public interface DipendenteRepository extends JpaRepository<Dipendente, Long>,DipendenteRepositoryCustom{
 
 	public List<Dipendente> findByAzienda_id(long id);
 	
@@ -25,5 +25,7 @@ public interface DipendenteRepository extends JpaRepository<Dipendente, Long>{
 			+ "LEFT JOIN Dipendente d on a.id = d.azienda.id "
 			+ " where d.id = :IdDipendente")
 	public String trovaNomeAziendaByDipendente(long IdDipendente);
+	
+	
 }
 /*select azienda0_.nome as col_0_0_ from azienda azienda0_ left outer join dipendente dipendente1_ on where dipendente1_.id_dipendente=?*/

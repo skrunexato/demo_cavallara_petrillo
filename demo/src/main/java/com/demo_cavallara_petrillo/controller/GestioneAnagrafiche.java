@@ -62,6 +62,11 @@ public class GestioneAnagrafiche {
 		return nome;
 	}
 	
+	@GetMapping("/dipendenteEmail")
+	public List<Dipendente> getDipendentePerEmail(){
+		List<Dipendente> dipendente = service.getDipendenteForEmail();
+		return dipendente;
+	}
 	
 	
 }

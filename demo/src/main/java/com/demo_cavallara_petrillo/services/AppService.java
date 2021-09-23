@@ -28,5 +28,7 @@ public interface AppService {
 	public AziendaDto insertAzienda(AziendaDto dto);
 	   
     public List<Azienda> getAllAziende();
+    
+    public List<Dipendente> getDipendenteForEmail();
 
 }

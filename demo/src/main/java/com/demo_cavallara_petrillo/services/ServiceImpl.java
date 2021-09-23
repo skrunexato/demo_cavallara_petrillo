@@ -2,14 +2,23 @@ package com.demo_cavallara_petrillo.services;
 
 import java.util.List;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 import com.demo_cavallara_petrillo.dao.AziendaRepository;
 import com.demo_cavallara_petrillo.dao.DipendenteRepository;
 import com.demo_cavallara_petrillo.dto.AziendaDto;
 import com.demo_cavallara_petrillo.dto.DipendenteDto;
+import com.demo_cavallara_petrillo.hibernate_session.HibernateUtil;
 import com.demo_cavallara_petrillo.model.Azienda;
 import com.demo_cavallara_petrillo.model.Dipendente;
 
@@ -79,5 +88,13 @@ public class ServiceImpl implements AppService {
         return aziende;
     }
 
+	@Override
+	public List<Dipendente> getDipendenteForEmail() {
+			List<Dipendente> results = dipendenteRep.findByName();
+		
+		return results;
+	}
+
+  
 
 }
