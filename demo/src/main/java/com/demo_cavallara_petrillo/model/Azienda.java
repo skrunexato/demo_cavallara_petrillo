@@ -1,6 +1,8 @@
 package com.demo_cavallara_petrillo.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,8 +19,23 @@ public class Azienda {
 	@Id
 	@Column(name="IdAzienda")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;	
+	private long id;		
 	
+	public Azienda(String nome) {
+		super();
+		this.nome = nome;
+	}
+	
+    @OneToMany(mappedBy = "fornitore")
+    Set<FornitoreAzienda> aziende;
+
+	public Azienda(long id, String nome, List<Dipendente> dipendenti) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.dipendenti = dipendenti;
+	}
+
 	@Column (name="Nome")
 	private String nome;
 	
