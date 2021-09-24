@@ -33,6 +33,13 @@ public class Fornitore {
     
     
 	
+	public Fornitore(String nome) {
+		super();
+		this.nome = nome;
+	}
+	public Fornitore() {
+		super();
+	}
 	public long getId() {
 		return id;
 	}

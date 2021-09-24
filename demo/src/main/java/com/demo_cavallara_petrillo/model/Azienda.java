@@ -41,6 +41,12 @@ public class Azienda {
 	
 	@OneToMany(mappedBy="azienda")
 	private List<Dipendente> dipendenti;
+	
+	
+
+	public Azienda() {
+		super();
+	}
 
 	public long getId() {
 		return id;
