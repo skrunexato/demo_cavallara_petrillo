@@ -22,7 +22,6 @@ public class FornitoreRepositoryImpl implements FornitoreRepositoryCustom{
 
 	@Override
 	public List<Fornitore> getFornitoreByTipologiaProdotto(TipologiaProdotto tipoP) {
-		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Fornitore> q = cb.createQuery(Fornitore.class);
 		Root<Fornitore> r = q.from(Fornitore.class);
@@ -31,7 +30,6 @@ public class FornitoreRepositoryImpl implements FornitoreRepositoryCustom{
 		q.where(p1);
 		TypedQuery<Fornitore> q2 = em.createQuery(q);
 		return q2.getResultList();
-		
 	}
 
 }
