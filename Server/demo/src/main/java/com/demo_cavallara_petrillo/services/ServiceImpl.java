@@ -2,25 +2,24 @@ package com.demo_cavallara_petrillo.services;
 
 import java.util.List;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
+
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 import com.demo_cavallara_petrillo.dao.AziendaRepository;
 import com.demo_cavallara_petrillo.dao.DipendenteRepository;
+import com.demo_cavallara_petrillo.dao.FornitoreRepository;
+import com.demo_cavallara_petrillo.dao.FornitoreRepositoryCustom;
 import com.demo_cavallara_petrillo.dto.AziendaDto;
 import com.demo_cavallara_petrillo.dto.DipendenteDto;
-import com.demo_cavallara_petrillo.hibernate_session.HibernateUtil;
+import com.demo_cavallara_petrillo.dto.FornitoreDto;
+import com.demo_cavallara_petrillo.dto.TipologiaProdottoDto;
 import com.demo_cavallara_petrillo.model.Azienda;
 import com.demo_cavallara_petrillo.model.Dipendente;
+import com.demo_cavallara_petrillo.model.Fornitore;
+import com.demo_cavallara_petrillo.model.TipologiaProdotto;
 
 
 
@@ -32,6 +31,9 @@ public class ServiceImpl implements AppService {
 	
 	@Autowired
 	private AziendaRepository aziendaRep;
+	
+	@Autowired
+	private FornitoreRepository fornitoreRep;
 
 	private DozerBeanMapper mapper = new DozerBeanMapper();
 
@@ -95,6 +97,18 @@ public class ServiceImpl implements AppService {
 		return results;
 	}
 
-  
+	@Override
+	public List<Fornitore> getFornitoriByAzienda(AziendaDto dto) {
+        Azienda azienda = mapper.map(dto, Azienda.class);
+		List<Fornitore> lista = fornitoreRep.getFornitoreByAzienda(azienda.getId());		
+		return lista;
+	}
+
+	@Override
+	public List<Fornitore> getFornitoriByTipoProdotto(TipologiaProdottoDto dto) {
+		TipologiaProdotto tipoP = mapper.map(dto, TipologiaProdotto.class);
+		List<Fornitore> lista = fornitoreRep.getFornitoreByTipologiaProdotto(tipoP);
+		return lista;
+	}
 
 }
