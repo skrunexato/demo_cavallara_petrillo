@@ -8,20 +8,24 @@ import { AziendaComponent } from './azienda/azienda.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     DipendenteComponent,
     AziendaComponent,
-    LoginComponent
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]
