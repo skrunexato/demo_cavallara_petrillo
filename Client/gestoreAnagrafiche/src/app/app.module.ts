@@ -7,12 +7,14 @@ import { DipendenteComponent } from './dipendente/dipendente.component';
 import { AziendaComponent } from './azienda/azienda.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DipendenteComponent,
-    AziendaComponent
+    AziendaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
