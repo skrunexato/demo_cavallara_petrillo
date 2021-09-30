@@ -1,1 +1,14 @@
-<p>dipendente {{prova}} works!</p>
+<table>
+    <tr>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Email</th>
+    </tr>
+    <tr *ngFor="let d of lista">
+    <td>{{d.id}}</td>
+    <td>{{d.nome}}</td>
+    <td>{{d.cognome}}</td>
+    <td>{{d.email}}</td>
+    </tr>
+</table>
