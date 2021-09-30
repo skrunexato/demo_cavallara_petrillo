@@ -3,6 +3,9 @@ package com.demo_cavallara_petrillo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,10 +29,11 @@ public class GestioneAnagrafiche {
 	@Autowired
 	AppService service;
 	
+	@CrossOrigin
 	@GetMapping("/listaDipendenti")
-	public List<Dipendente> getDipendenti() {
+	public ResponseEntity<Object> getDipendenti() {
 		List<Dipendente>listaDip = service.getAllDipendenti();
-		return listaDip;
+		return new ResponseEntity<Object>(listaDip, HttpStatus.OK);
 	}
 	
 	@PostMapping("")

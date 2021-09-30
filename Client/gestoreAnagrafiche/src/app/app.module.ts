@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DipendenteComponent } from './dipendente/dipendente.component';
 import { AziendaComponent } from './azienda/azienda.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DipendenteService } from './dipendente/dipendente-service/dipendente.service';
+import { Dipendente } from './dipendente/dipendente-class/dipendente';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DipendenteComponent,
     AziendaComponent,
-    LoginComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -25,9 +24,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FormsModule,
     RouterModule,
     HttpClientModule,
-    HttpClient
+    
   ],
-  providers: [],
+  providers: [Dipendente],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
