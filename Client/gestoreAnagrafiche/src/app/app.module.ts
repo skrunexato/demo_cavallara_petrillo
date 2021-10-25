@@ -9,8 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DipendenteService } from './dipendente/dipendente-service/dipendente.service';
 import { Dipendente } from './dipendente/dipendente-class/dipendente';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import{MatDialogModule}from '@angular/material/dialog'
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,10 @@ import { Dipendente } from './dipendente/dipendente-class/dipendente';
     FormsModule,
     RouterModule,
     HttpClientModule,
-    
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [Dipendente],
   bootstrap: [AppComponent]

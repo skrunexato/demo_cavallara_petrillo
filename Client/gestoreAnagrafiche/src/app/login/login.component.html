@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form  class="box">
+                    <h1>Login</h1>
+                    <p class="text-muted"> inserisci email e password per volare!</p> <input type="text" #email id="email" name="" placeholder="email"> <input id="pass" #password type="password" name="" placeholder="Password"> <a class="forgot text-muted" href="#">per caso hai dimenticato la password?</a> <input type="button" (click)="onSubmit(email.value,password.value)"  name=""  value="entra" href="#"><input type="button" (click)="onSubmit(email.value,password.value)"  name=""  value="Registrati" href="#">
+                    <div class="col-md-12">
+                        <ul class="social-network social-circle">
+                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

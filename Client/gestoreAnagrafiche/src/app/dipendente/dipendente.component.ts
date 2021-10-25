@@ -17,6 +17,7 @@ export class DipendenteComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getDipendenti().subscribe(data=>{
+      console.log(data)
       this.lista = data});
   }
 
